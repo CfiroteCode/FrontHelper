@@ -24,3 +24,7 @@ canvas{
     background-color: white;
     border: 1px solid red;
 }
+nav{
+    position: absolute;
+    display: block;
+}
