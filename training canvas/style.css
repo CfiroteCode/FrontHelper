@@ -4,6 +4,8 @@ body{
     margin : 0 auto;
     padding: 0;
     background-color: #ccc;
+    
+    display: flex;
 }
 .container{
     margin: 10px auto;
@@ -26,5 +28,12 @@ canvas{
 }
 nav{
     position: absolute;
-    display: block;
+    display: flex;
+    flex-direction: column;
+}
+button{
+    width: 80px;
+    height: 80px;
+    margin:10px;
+
 }
