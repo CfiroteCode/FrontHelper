@@ -2,9 +2,11 @@ var canvas = document.getElementById("canvasZone");
 var context = canvas.getContext("2d");
 var typeFonction = 0;
 var enregistrement = [];
+var redo =[];
 var btn1 = document.getElementById('1');
 var btn2 = document.getElementById('2');
 var btn3 = document.getElementById('3');
+var btn4 = document.getElementById('4');
 var moins = 0;
 var plus = 0;
 
@@ -34,7 +36,6 @@ function dessine(evt) { //ajoute une ligne à la liste des ellement à afficher 
   } else if (typeFonction == 1) {
     enregistrement.push([0, typeFonction, mousePos.x, plus, moins]);
   }
-  compteur++;
 
 }
 canvas.addEventListener('click', dessine); //detecte le clic sur le canvas
@@ -46,16 +47,21 @@ btn2.addEventListener('click', function () {//detecte le clic sur le boutton 2
   typeFonction = 1;
 }, false)
 btn3.addEventListener('click', function (){  //crée la fonction de UNDO
+  redo.push (enregistrement[enregistrement.length-1]);
   enregistrement.splice(enregistrement.length-1,1)
   moins = 0;
   plus = canvas.width;
 }, false)
-
-
+btn4.addEventListener('click', function (){  //crée la fonction de UNDO
+  enregistrement.push (redo[redo.length-1]);
+  redo.splice(redo.length-1,1)
+  moins = 0;
+  plus = canvas.width;
+}, false)
 
 canvas.addEventListener('mousemove', function (evt) {//fonction principale qui fonctionne tout le temp dés que la souris est sur le canvas
   var mousePos = getMousePos(canvas, evt);
-  var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y + ' , ' + moins + ' , ' + plus + ' , ' + enregistrement.length;
+  var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y + ' , ' + moins + ' , ' + plus + ' , ' + redo.length;
   writeMessage(canvas, message);
   context.beginPath();
   for (i = 0; i < enregistrement.length; i++) { //affiche les lignes enregistré si il y en a
@@ -114,3 +120,18 @@ canvas.addEventListener('mousemove', function (evt) {//fonction principale qui f
   }
   context.stroke();
 }, false);
+
+canvas.addEventListener('mouseleave', function(evt){
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  for (i = 0; i < enregistrement.length; i++) { //affiche les lignes enregistré si il y en a
+
+    if (enregistrement[i][1] == 0) {
+      context.moveTo(enregistrement[i][4], enregistrement[i][2]);
+      context.lineTo(enregistrement[i][3], enregistrement[i][2]);
+    } else {
+      context.moveTo(enregistrement[i][2], enregistrement[i][4]);
+      context.lineTo(enregistrement[i][2], enregistrement[i][3]);
+    }
+  }
+  context.stroke();
+});
