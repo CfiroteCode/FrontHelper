@@ -9,7 +9,8 @@ body{
 }
 .container{
     margin: 10px auto;
-    width: 960px;
+    width: 1500px;
+    display: flex;
 }
 .clearfix::after{
     visibility: hidden;
@@ -24,7 +25,7 @@ canvas{
     width: 960px;
     height: 800px;
     background-color: white;
-    border: 1px solid red;
+    display: flex;
 }
 nav{
     position: absolute;
@@ -36,4 +37,10 @@ button{
     height: 80px;
     margin:10px;
 
+}
+.texthtml{
+    width: 500px;
+    height: 800px;
+    border: 1px solid red;
+    display: flex;
 }
