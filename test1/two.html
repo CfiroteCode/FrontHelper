@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Two grids demo</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./gridstack.css" />
+    <link rel="stylesheet" href="./gridstack-extra.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.0/lodash.min.js"></script>
+    <script src="./gridstack.js"></script>
+    <script src="./gridstack.jQueryUI.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="ajouter">Ajouter</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="sidebar">
+                    <div class="grid-stack-item">
+                        <div class="card text-white bg-primary grid-stack-item-content base" data-gs-width="3" data-gs-height="3" style="overflow-x: hidden; overflow-y: hidden;">
+                            <div class="card-header">
+                                <h4>Article</h4>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Lorem ipsum dolor sit amet.</p>
+                                
+                            </div>
+                            <button class="trash far fa-trash-alt"></button>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="ordi col-md-8">
+                    <img src="ecranPC.png" alt="pc" class="center">
+                    <div class="ordi-ecran container">
+                        <div class="grid-stack ordi-ecran-navigateur grid-stack-12" id="grid1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="btn btn-default" id="save-grid" href="#">Save Grid</a>
+        <hr/>
+
+        <textarea id="saved-data" cols="100" rows="20" readonly="readonly"></textarea>
+
+    </div>
+
+
+
+    <script type="text/javascript">
+        $(function () {
+            var self = this;
+
+            var options = {
+                verticalMargin: 1,
+                float: true,
+                removeTimeout: 100,
+                acceptWidgets: '.grid-stack-item'
+            };
+            $('#grid1').gridstack(options);
+
+            var items = [
+                { x: 0, y: 0, width: 1, height: 2 },
+                { x: 3, y: 1, width: 1, height: 2 },
+                { x: 4, y: 1, width: 1, height: 1 },
+                { x: 2, y: 3, width: 3, height: 1 },
+                { x: 2, y: 5, width: 1, height: 1 }
+            ];
+
+             this.saveGrid = function () {
+                    this.serializedData = _.map($('.grid-stack > .grid-stack-item:visible'), function (el) {
+                        el = $(el);
+                        var node = el.data('_gridstack_node');
+                        return {
+                            x: node.x,
+                            y: node.y,
+                            width: node.width,
+                            height: node.height
+                        };
+                    });
+                    $('#saved-data').val(JSON.stringify(this.serializedData, null, '    '));
+                    return false;
+                }.bind(this);
+
+            $('#save-grid').click(this.saveGrid);
+
+            $('.grid-stack').each(function () {
+                var grid = $(this).data('gridstack');
+
+                _.each(items, function (node) {
+                    grid.addWidget($('<div class="base"><div class="grid-stack-item-content" style="left:0px;right:1px;"><button class="trash far fa-trash-alt"></button></div><div/>'),
+                        node.x, node.y, node.width, node.height);
+                });
+            });
+
+            $('.sidebar .grid-stack-item').draggable({
+                revert: 'invalid',
+                handle: '.grid-stack-item-content',
+                scroll: false,
+                appendTo: 'body'
+            });
+        });
+    </script>
+    <script src="index.js" ></script>/>
+</body>
+
+</html>
