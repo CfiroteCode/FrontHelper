@@ -20,6 +20,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.0/lodash.min.js"></script>
     <script src="./gridstack.js"></script>
     <script src="./gridstack.jQueryUI.js"></script>
+    <script src="./node_modules/jszip/dist/jszip.js"></script>
 </head>
 
 <body>
@@ -97,9 +98,15 @@
                 });
                 var savePosition = $('#saved-data').val(JSON.stringify(this.serializedData, null, '    '));
                 this.test = this.serializedData;
-                var traitement = createCSS(this.test);
-                download("output.css", traitement);
-                //console.log(this.test[4]['x']);
+                //var JSZip = require("./node_modules/jszip/dist/jszip.js");
+                //var zip = new JSZip();
+                var traitementcss = createCSS(this.test);
+                //zip.file("output.css", traitementcss);
+                download("output.css", traitementcss);
+                var traitementhtml = createHTML(this.test);
+                //zip.file("output.html", traitementhtml);
+                //download("output.zip", zip);
+                download("output.html", traitementhtml);
                 return false;
             }.bind(this);
 
@@ -200,6 +207,36 @@
                 str += `}`;
                 return str;
             }
+
+function createHTML(a) {
+    var str = `<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="output.css">
+    <title>Test affichage</title>
+</head>
+
+<body>
+    <div class="gridcontainer">
+`;
+
+    for (var i = 0; i < a.length; i++) {
+         str +=`<div class="item` + (i+1) + `">` + (i+1) + `</div>
+         `;
+        }
+        str += `
+            </div>
+</body>
+
+</html>`;
+    
+    str += `}`;
+    return str;
+}
         });
     </script>
     <script src="index.js"></script>/>
