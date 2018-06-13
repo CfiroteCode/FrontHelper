@@ -39,6 +39,7 @@
                             </div>
                             <div class="card-body">
                                 <p class="card-text">Lorem ipsum dolor sit amet.</p>
+                                <input type="color" class="html5colorpicker" value="#ff0000" style="width:85%;">
 
                             </div>
                             <button class="trash far fa-trash-alt"></button>
@@ -116,7 +117,7 @@
                 var grid = $(this).data('gridstack');
 
                 _.each(items, function (node) {
-                    grid.addWidget($('<div class="base"><div class="grid-stack-item-content" style="left:0px;right:1px;"><button class="trash far fa-trash-alt"></button></div><div/>'),
+                    grid.addWidget($('<div class="base"><div class="grid-stack-item-content" style="left:0px;right:1px;"><input type="color" class="html5colorpicker" value="#ff0000" style="width:85%;"><button class="trash far fa-trash-alt"></button></div><div/>'),
                         node.x, node.y, node.width, node.height);
                 });
             });
