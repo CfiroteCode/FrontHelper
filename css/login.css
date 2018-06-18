@@ -1,0 +1,119 @@
+@import url(font-awesome.min.css);
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic");
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
+
+h1{
+    font-size:30px;
+    margin-bottom:30px;
+    padding-left:50px;
+    font-family: 'Lato', sans-serif; 
+}
+
+.fa, .fas{
+    padding:30px 0px;
+}
+
+.login{
+    font-family: 'Lato', sans-serif;
+    background-image: url(../images/banner.jpg);
+    padding:160px 0px;
+}
+
+.login-box{
+    background:#FFF;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    padding:30px;
+    border-radius:8px;
+    min-height:350px;
+}
+.signup-box{
+  background:#FFF;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    padding:30px;
+    border-radius:8px;
+    min-height:600px;
+}
+
+.form-control{
+    margin:20px 0px;
+}
+
+.buttons{
+    float:right;
+    margin:20px 0px;
+}
+#header {
+  -moz-transition: background-color 0.2s ease;
+  -webkit-transition: background-color 0.2s ease;
+  -ms-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+  background: #2e3842;
+  height: 3em;
+  left: 0;
+  line-height: 3em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+}
+
+  #header h1 {
+    height: inherit;
+    left: 0;
+    line-height: inherit;
+    position: absolute;
+    top: 0;
+  }
+
+    #header h1 a {
+      border: 0;
+      display: block;
+      height: inherit;
+      line-height: inherit;
+      border: 0;
+      font-weight: 800;
+      color: #fff;
+          display: block;
+          font-size: 0.8em;
+          letter-spacing: 0.225em;
+          padding: 0 1.5em;
+          text-transform: uppercase;
+          margin: 0;
+    }
+
+  #header nav {
+    height: inherit;
+    line-height: inherit;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+    #header nav > ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;
+    }
+
+      #header nav > ul > li {
+        display: inline-block;
+        padding: 0;
+      }
+
+        #header nav > ul > li > a {
+          
+        }
+            #header nav > ul > li > a.menuToggle {
+              background-image: url("images/bars.svg");
+              background-position: right center;
+              background-repeat: no-repeat;
+              content: '';
+              display: inline-block;
+              height: 3.75em;
+              vertical-align: top;
+              width: 2em;
+            }
+        #header nav > ul > li:first-child {
+          margin-left: 0;
+        }
