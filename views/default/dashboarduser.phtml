@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/dash.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    
+    <?php include THEME_PATH . DS . 'navbar.phtml'; ?>
+    
+<div class="row principale">
+    <div class="container">
+        <h1>Design</h1>
+        <div class="row">
+
+            <!-- card -->
+            <div class="card mb-3 col-3">
+                <h3 class="card-header">Design #1</h3>
+                <div style="height: 200px; width: 100%; display: block;" class="grid-display" >
+                <div class="item1"></div>
+                <div class="item2"></div>
+                <div class="item3"></div>
+                </div>
+                
+                <div class="card-body">
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+                <div class="card-footer text-muted">
+                    2 days ago
+                </div>
+            </div>
+
+            <!-- fin de card  -->
+        </div>
+    </div>
+</div>
+
+    <script src="assets/js/jquery-1.11.1.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.grid-stack').gridstack(options);
+
+            new function () {
+                var options = {
+            };
+                // this.serializedData = [
+                //     {x: 0, y: 0, width: 2, height: 2},
+                //     {x: 3, y: 1, width: 1, height: 2},
+                //     {x: 4, y: 1, width: 1, height: 1},
+                //     {x: 2, y: 3, width: 3, height: 1},
+                //     {x: 1, y: 4, width: 1, height: 1},
+                //     {x: 1, y: 3, width: 1, height: 1},
+                //     {x: 2, y: 4, width: 1, height: 1},
+                //     {x: 2, y: 5, width: 1, height: 1}
+                // ];
+
+                this.grid = $('.grid-stack').data('gridstack');
+
+                this.loadGrid = function () {
+                    var items = GridStackUI.Utils.sort(this.serializedData);
+                    _.each(items, function (node) {
+                        this.grid.addWidget($('<div><div class="grid-stack-item-content" /></div>'),
+                        node.x, node.y, node.width, node.height);
+                    }.bind(this));
+                    return false;
+                }.bind(this);
+
+                this.loadGrid();
+            };
+        });
+    </script>
+</body>
+</html>

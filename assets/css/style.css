@@ -1,0 +1,86 @@
+.grid-stack-item-content {
+    color: #2c3e50;
+    text-align: center;
+    background-color: #18bc9c;
+}
+
+#grid2 .grid-stack-item-content {
+    background-color: #000000;
+}
+
+.grid-stack-item-removing {
+    opacity: 0.5;
+}
+
+.trash{
+    position: absolute;
+    height: 30px;
+    widows: 30px;
+    bottom: 5px;
+    left: 5px;
+    background-color: rgba(255, 0, 0, 0.747);
+    color: #000000c2;
+    border: 1px solid rgba(0, 0, 0, 0.486);
+}
+
+.sidebar {
+    background: rgba(0, 255, 0, 0.1);
+    height: 150px;
+    padding: 25px 0;
+    text-align: center;
+}
+
+.sidebar .grid-stack-item {
+    width: 200px;
+    height: 100px;
+    border: 2px dashed green;
+    text-align: center;
+    line-height: 100px;
+    z-index: 10;
+    background: rgba(0, 255, 0, 0.1);
+    cursor: default;
+    display: inline-block;
+}
+
+.sidebar .grid-stack-item .grid-stack-item-content {
+    background: none;
+}
+
+.ordi {
+    height: 1000px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.ordi-ecran {
+    position: absolute;
+    height: 52%;
+    top: 20%;
+    width: 942px;
+    left: 9%;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%
+}
+
+.ordi-ecran-navigateur {
+    max-height: 800px;
+}
+.btn-ellement
+{
+    height: 100px;
+    width: 100px;
+    margin: auto 20px;
+    margin-top: 20px
+}
+
+#grid1{
+    min-height:100%;
+}

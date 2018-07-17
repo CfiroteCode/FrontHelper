@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="<?= BASE_URL; ?>/index.php">Web Design Helper</a>
+
+  <div class="btn-group menu" role="group" aria-label="Button group with nested dropdown">
+  <button type="button" class="btn btn-primary  menu-title">Menu</button>
+  <div class="btn-group" role="group">
+    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle menu-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-caret-down"></i></button>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop1">
+		<?php if(isset($_SESSION['user'])) : ?>
+      <ul>
+				<li>
+					<a href="<?= BASE_URL; ?>/index.php">Accueil</a>
+				</li>
+				<li>
+					<a href="<?= BASE_URL; ?>/design.php">Nouveau Design</a>
+				</li>
+				<li>
+					<a href="<?= BASE_URL; ?>/login.php">Mon Compte</a>
+				</li>
+				<li>
+					<a href="<?= BASE_URL; ?>/contact.php">Deconnexion</a>
+				</li>
+			</ul>
+			<?php else : ?>
+			<ul>
+				<li>
+					<a href="<?= BASE_URL; ?>/index.php">Accueil</a>
+				</li>
+				<li>
+					<a href="<?= BASE_URL; ?>/signup.php">Inscription</a>
+				</li>
+				<li>
+					<a href="<?= BASE_URL; ?>/login.php">Connexion</a>
+				</li>
+				<li>
+					<a href="<?= BASE_URL; ?>/contact.php">Contact</a>
+				</li>
+			</ul>
+			<?php endif ?>
+    </div>
+  </div>
+</div>
+</nav>

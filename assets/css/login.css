@@ -2,20 +2,12 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic");
 @import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
 
-h1{
-    font-size:30px;
-    margin-bottom:30px;
-    padding-left:50px;
-    font-family: 'Lato', sans-serif; 
+.loginPage{
+  
+  background-image: url(images/banner.jpg);
 }
-
-.fa, .fas{
-    padding:30px 0px;
-}
-
 .login{
     font-family: 'Lato', sans-serif;
-    background-image: url(../images/banner.jpg);
     padding:160px 0px;
 }
 
@@ -37,83 +29,41 @@ h1{
 .form-control{
     margin:20px 0px;
 }
-
-.buttons{
-    float:right;
-    margin:20px 0px;
+.form-group>a{
+  text-decoration: none;
+  color: darkblue;
 }
-#header {
-  -moz-transition: background-color 0.2s ease;
-  -webkit-transition: background-color 0.2s ease;
-  -ms-transition: background-color 0.2s ease;
-  transition: background-color 0.2s ease;
-  background: #2e3842;
-  height: 3em;
-  left: 0;
-  line-height: 3em;
+.navbar{
+  display: block;
   position: fixed;
-  top: 0;
+  top: 0%;
+  height: 50px;
   width: 100%;
-  z-index: 10000;
+  color: aliceblue;
+  text-decoration: none;
+  font-weight: bolder;
+  border-radius: 0;
 }
-
-  #header h1 {
-    height: inherit;
-    left: 0;
-    line-height: inherit;
-    position: absolute;
-    top: 0;
-  }
-
-    #header h1 a {
-      border: 0;
-      display: block;
-      height: inherit;
-      line-height: inherit;
-      border: 0;
-      font-weight: 800;
-      color: #fff;
-          display: block;
-          font-size: 0.8em;
-          letter-spacing: 0.225em;
-          padding: 0 1.5em;
-          text-transform: uppercase;
-          margin: 0;
-    }
-
-  #header nav {
-    height: inherit;
-    line-height: inherit;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-    #header nav > ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      white-space: nowrap;
-    }
-
-      #header nav > ul > li {
-        display: inline-block;
-        padding: 0;
-      }
-
-        #header nav > ul > li > a {
-          
-        }
-            #header nav > ul > li > a.menuToggle {
-              background-image: url("images/bars.svg");
-              background-position: right center;
-              background-repeat: no-repeat;
-              content: '';
-              display: inline-block;
-              height: 3.75em;
-              vertical-align: top;
-              width: 2em;
-            }
-        #header nav > ul > li:first-child {
-          margin-left: 0;
-        }
+a{
+  color: #FFF;
+  text-decoration: none;
+}
+.menu{
+  margin-top: 5px;
+  position: absolute;
+  right: 5px;
+}
+.dropdown-menu{
+  background-color: #428bca;
+}
+.dropdown-menu>a{
+  padding-left: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.navbar{
+  z-index: 1000;
+}
+.icone{
+  padding-top:30px;
+}

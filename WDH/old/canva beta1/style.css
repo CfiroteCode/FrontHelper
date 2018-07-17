@@ -1,0 +1,39 @@
+body{
+    font-family: 'Philosopher', sans-serif;
+    font-size: 16px;
+    margin : 0 auto;
+    padding: 0;
+    background-color: #ccc;
+    
+    display: flex;
+}
+.container{
+    margin: 10px auto;
+    width: 960px;
+}
+.clearfix::after{
+    visibility: hidden;
+    content: '';
+    clear:both;
+    overflow: auto;
+    zoom:1;
+    display: table;
+    height: 0;
+}
+canvas{
+    width: 960px;
+    height: 800px;
+    background-color: white;
+    border: 1px solid red;
+}
+nav{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+button{
+    width: 80px;
+    height: 80px;
+    margin:10px;
+
+}
