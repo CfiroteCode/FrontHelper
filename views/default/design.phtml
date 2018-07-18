@@ -37,15 +37,13 @@
             </div>
             <div class="col" id="barreDeMerde">
                 <div class="sidebar" >
-                    <div class="grid-stack-item">
-                        <div class="card text-white bg-primary grid-stack-item-content base div2" data-gs-width="3" data-gs-height="3" data-color="black" style="overflow-x: hidden; overflow-y: hidden;">
-                            <div class="card-header">
-                                <h4>Article</h4>
-                            </div>
-                            <div class="card-body">
-                                <input type="color" class="html5colorpicker">
+                <div class="grid-stack-item">
+                    <div class="card text-white bg-primary grid-stack-item-content base div2" data-gs-width="3" data-gs-height="3" style="overflow-x: hidden; overflow-y: hidden;">
+                        <div class="card-header">
+                            <h4>Article</h4>
+                        </div>
+                            <div  class="card-body"><input type="color" class="html5colorpicker">
                                 <img src="assets/css/images/colorwheel.png" alt="color" class="color-change">
-
                             </div>
                             <button class="trash far fa-trash-alt"></button>
                         </div>
@@ -129,7 +127,7 @@
                 var grid = $(this).data('gridstack');
 
                 _.each(items, function (node) {
-                    grid.addWidget($('<div class="grid-stack-item"><div class="card text-white bg-primary grid-stack-item-content base div' + 1 + '" data-color="black" data-gs-width="3" data-gs-height="3" style="overflow-x: hidden; overflow-y: hidden;"><div class="card-header"><h4>Article</h4></div><div  class="card-body"><input type="color" class="html5colorpicker"><img src="assets/css/images/colorwheel.png" alt="color" class="color-change"></div><button class="trash far fa-trash-alt"></button></div></div>'),
+                    grid.addWidget($('<div class="grid-stack-item"><div class="card text-white bg-primary grid-stack-item-content base div' + 1 + '" data-gs-width="3" data-gs-height="3" style="overflow-x: hidden; overflow-y: hidden;"><div class="card-header"><h4>Article</h4></div><div  class="card-body"><input type="color" class="html5colorpicker"><img src="assets/css/images/colorwheel.png" alt="color" class="color-change"></div><button class="trash far fa-trash-alt"></button></div></div>'),
                         node.x, node.y, node.width, node.height);
                 });
             });
